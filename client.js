@@ -8,11 +8,13 @@ const connect = function () {
 
   // interpret incoming data as text incase it is in another form
   conn.setEncoding("utf8");
+  //connect event
   conn.on("connect", () => {
     // code that does something when the connection is first established
-    console.log("You ded cos you idled");
+    console.log("connected to server...");
+    conn.write('Name: SNK');
   });
-
+  
   return conn;
 };
 
